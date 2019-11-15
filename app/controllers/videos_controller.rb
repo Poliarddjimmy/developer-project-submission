@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  skip_before_action :get_rooted, only: [:index]
+  skip_before_action :get_rooted, only: [:index, :show]
 
   def index
     @videos = Video.order('created_at DESC')
