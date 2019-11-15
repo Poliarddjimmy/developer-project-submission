@@ -59,6 +59,7 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'rails-observers'
 
 group :development, :test do
   gem 'rspec-rails'
