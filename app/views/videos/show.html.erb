@@ -1,39 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+    <div class="container">
+        <h3><%= @video.title %></h3>
+    
 
-<p>
-  <strong>User:</strong>
-  <%= @video.user_id %>
-</p>
+        <div class="container">
+        <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>">
+            <%= value %>
+            </div>
+        <% end %>
+        </div>
 
-<p>
-  <strong>Link:</strong>
-  <%= @video.link %>
-</p>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @video.description %>
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12" >
+            <iframe class="w-100 vid"  src="https://www.youtube.com/embed/<%= @video.uid %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @video.title %>
-</p>
+        <div class="col-lg-12 col-md-12 ">
+            <p>Shared by: <%= @video.user.email %></p>
+            <p>
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> <%= @video.likes %>
+                <span class="ml-3 mr-3"></span>
+                <i class="fa fa-thumbs-down" aria-hidden="true"></i> <%= @video.dislikes %>
+            </p>
 
-<p>
-  <strong>Published at:</strong>
-  <%= @video.published_at %>
-</p>
+            <p>
+                <b class="d-block">Description</b>
+                <%= @video.description[0..300] ... %>
+            </p>
+            <p>Published at <%= @video.published_at.strftime('%-d %B %Y %H:%M:%S') %></p>
+            
+        </div>
 
-<p>
-  <strong>Likes:</strong>
-  <%= @video.likes %>
-</p>
-
-<p>
-  <strong>Dislikes:</strong>
-  <%= @video.dislikes %>
-</p>
-
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+    </div>
+</div>

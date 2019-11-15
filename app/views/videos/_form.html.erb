@@ -11,47 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+  <%= render 'shared/errors', object: @video %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
+    <div class="form-group">
+      <%= f.label :link %>
+      <%= f.text_field :link, class: 'form-control text-secondary p-2 border', required: true %>
+      <span class="help-block">Share</span>
+    </div>
 
-  <div class="field">
-    <%= form.label :link %>
-    <%= form.text_field :link %>
-  </div>
+  <%= f.submit class: 'btn btn-primary' %>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :published_at %>
-    <%= form.datetime_select :published_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :likes %>
-    <%= form.number_field :likes %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dislikes %>
-    <%= form.number_field :dislikes %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

@@ -1,5 +1,14 @@
-<h1>New Video</h1>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Share a new video</h1>
+    <br>
+    <p>
+      <%= link_to 'Go back home', root_path, class: 'btn btn-info btn-lg' %>
+    </p>
+  </div>
+</div>
 
+<div class="container">
 <%= render 'form', video: @video %>
 
-<%= link_to 'Back', videos_path %>
+</div>
