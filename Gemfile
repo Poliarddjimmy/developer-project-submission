@@ -26,7 +26,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'nokogiri'
 
 gem 'yt', '~> 0.13.7'
-gem 'bootstrap-sass', '~> 3.3.0.1'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'autoprefixer-rails'
 gem 'rails-observers'
 
